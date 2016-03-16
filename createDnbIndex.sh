@@ -1,5 +1,7 @@
 #!/bin/bash
 
+WORKDIR=`dirname $0`
+
 host="http://localhost:9200"
 index="dnb"
 
@@ -12,4 +14,4 @@ curl -XPUT "${host}/${index}" -d '
              number_of_shards : 5
              number_of_replicas : 1
      '
-curl -XPUT "${host}/${index}/data/_mapping" -d @es-mapping.json
+curl -XPUT "${host}/${index}/data/_mapping" -d @$WORKDIR/es-mapping.json
