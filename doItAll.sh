@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./getDnbTitel.sh
-./split.sh
-./convert.sh
-./createDnbIndex.sh
-./json2es.sh
+SELF=`dirname $0`
+
+$SELF/getDnbTitel.sh
+$SELF/split.sh
+$SELF/convert.sh
+$SELF/createDnbIndex.sh
+$SELF/json2es.sh
 
