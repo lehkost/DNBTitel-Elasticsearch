@@ -1,0 +1,164 @@
+{
+      "data" : {
+        "properties" : {
+          "contributor" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "creator" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "date" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "date_norm" : {
+            "type" : "date",
+            "format" : "YYYY",
+            "ignore_malformed" : "true"
+          },
+          "dnb-id" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "extent" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "extent_norm" : {
+            "type" : "long",
+            "ignore_malformed" : "true"
+          },
+          "lang" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "medium" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "pages" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "pages_norm" : {
+            "type" : "long",
+            "ignore_malformed" : "true"
+          },
+          "place" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "place_publisher_year" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "price" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "publisher" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "short_title" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "subject" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "title" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          },
+          "type" : {
+            "fields": {
+                "untouched": {
+                    "index": "not_analyzed", 
+                    "type": "string"
+                }
+            },
+            "type" : "string"
+          }
+        }
+      }
+    }
+
