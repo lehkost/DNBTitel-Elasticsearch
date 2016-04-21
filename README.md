@@ -1,8 +1,5 @@
 # DNBTitel-Elasticsearch
-Some shell scripts to feed the open data from the German National Library (DNB) title catalogue to Elasticsearch.
-
-## Source
-* http://datendienst.dnb.de/cgi-bin/mabit.pl?userID=opendata&pass=opendata&cmd=login
+This Dockerfile will create a container running Elasticsearch/Kibana. It also features shell scripts for downloading [the current version of the German National Library (DNB) title catalogue](http://datendienst.dnb.de/cgi-bin/mabit.pl?userID=opendata&pass=opendata&cmd=login). Some selected data fields from every book in that catalogue are then transformed into JSON and pushed to the Elasticsearch instance. After that you will be able to query the DNB catalogue data with Elasticsearch to create nice outputs with Kibana. The data fields we're focusing on are mainly the number of pages per book and some book metadata (author, title, year, publisher, etc.) for identification.
 
 # Docker
 
@@ -23,5 +20,5 @@ Some shell scripts to feed the open data from the German National Library (DNB) 
 
     docker ps
 
-    docker exec [docker-instance-name-from-ps] es2dnb/doItAll.sh
+    docker exec [docker-instance-name-from-ps] dnb2es/doItAll.sh
 
