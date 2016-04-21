@@ -5,10 +5,10 @@ MAINTAINER lehkost <frafis@gmail.com>
 RUN apt-get update && apt-get install -yq \ 
   curl \
   default-jre-headless \
-  git \
   libsaxonb-java \
   wget \
-  xml-twig-tools
+  xml-twig-tools \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m elasticsearch
 
@@ -32,9 +32,11 @@ RUN wget -nv https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-
 
 RUN kibana/bin/kibana plugin --install elastic/sense
 
-#RUN git clone https://github.com/lehkost/DNBTitel-Elasticsearch.git
-
 COPY dnb2es /home/elasticsearch/dnb2es
+
+USER root
+RUN chown -R elasticsearch /home/elasticsearch/dnb2es
+USER elasticsearch
 
 CMD elasticsearch/bin/elasticsearch -Des.logger.level=OFF & kibana/bin/kibana -q
 
