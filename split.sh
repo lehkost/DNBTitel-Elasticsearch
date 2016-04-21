@@ -1,11 +1,10 @@
 #!/bin/bash
 
-#rm -f split/DNBTitel-*
-
 mkdir split
 cd split/
 rm -f DNBTitel-*
-xml_split -n 3 -g 100000 ../DNBTitel.rdf
+mv ../DNBTitel.rdf .
+xml_split -n 3 -g 100000 DNBTitel.rdf
 cd ..
 
 for splitted in split/DNBTitel-*.rdf; do
