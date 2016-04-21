@@ -6,7 +6,7 @@ mkdir split
 cd split/
 rm -f DNBTitel-*
 mv ../DNBTitel.rdf .
-xml_split -n 3 -g 100000 ../DNBTitel.rdf
+xml_split -n 3 -g 100000 DNBTitel.rdf
 rm DNBTitel-000.rdf
 cd ..
 
