@@ -17,7 +17,7 @@ Some shell scripts to feed the open data from the German National Library (DNB) 
 
 ## start docker image
 
-    docker run --rm -ti -p 9200:9200 -p 5601:5601 -v esdata:/home/elasticsearch/es2dnb -v esindexdata:/home/elasticsearch/elasticsearch esdnb:latest
+    docker run --rm -ti -p 9200:9200 -p 5601:5601 -v dnb2es:/home/elasticsearch/es2dnb -v esindex:/home/elasticsearch/elasticsearch esdnb:latest
 
 ## download data from dnb, transform to json and fill elasticsearch
 
