@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "splitting rdf/xml file ins smaller pieces, this may take a while"
+echo "splitting rdf/xml file into smaller pieces, this may take a while"
 
 mkdir split
 cd split/
