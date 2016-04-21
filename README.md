@@ -16,6 +16,8 @@ This Dockerfile will create a container running Elasticsearch/Kibana. It also fe
 
     docker run --rm -ti -p 9200:9200 -p 5601:5601 -v dnb2es:/home/elasticsearch/dnb2es -v esindex:/home/elasticsearch/elasticsearch dnb-titel:latest
 
+After this we have working Docker container and can query Elasticesearch with Kibana/Sense via http://localhost:5601. However, our Elasticsearch index is still empty. It will be filled with DNB catalogue data during the next step:
+
 ## download data from dnb, transform to json and fill elasticsearch
 
     docker ps
