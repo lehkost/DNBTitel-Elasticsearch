@@ -14,7 +14,7 @@ This Dockerfile will create a container running Elasticsearch/Kibana. It also fe
 
 ## start docker image
 
-    docker run --rm -ti -p 9200:9200 -p 5601:5601 -v dnb2es:/home/elasticsearch/es2dnb -v esindex:/home/elasticsearch/elasticsearch esdnb:latest
+    docker run --rm -ti -p 9200:9200 -p 5601:5601 -v dnb2es:/home/elasticsearch/dnb2es -v esindex:/home/elasticsearch/elasticsearch dnb-titel:latest
 
 ## download data from dnb, transform to json and fill elasticsearch
 
