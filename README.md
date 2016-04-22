@@ -41,10 +41,15 @@ This will call all sub scripts assembled in our "doItAll" file:
 
 Now we're ready to go and carry out some queries.
 
-# Kibana
+# Using Kibana
 
 Now head to the Kibana dashboard here `http://localhost:5601`. If you never worked with Kibana, check out their guide, for our purposes it's perfectly okay to start with the chapter *[Defining Your Index Patterns](https://www.elastic.co/guide/en/kibana/4.3/tutorial-define-index.html)*.
 
 Go to "Settings", "Indices", enter "dnb" as name for the index pattern and don't forget to uncheck the box "Index contains time-based events". Then click on "Create".
 
 Then, just to give you an example, you can click on "Visualize". Then "Vertical bar chart". Select "From a new search" (index "dnb"). Now you can graphically create your query. For example, to find the 5 authors with the most titles in the catalogue, do this: "X-Axis", Aggregation "Terms", choose the field "creator.untouched". Then press the green Play button. There you will see the 5 authors who have the most titles in the DNB. They appear as their GND numbers: Goethe, Rudolf Steiner, Thomas Mann, Hermann Hesse, Heinz G. Konsalik.
+
+# Using Sense
+
+Go to `http://localhost:9200` and write your query. 
+
