@@ -51,5 +51,48 @@ Then, just to give you an example, you can click on "Visualize". Then "Vertical 
 
 # Using Sense
 
-Go to `http://localhost:9200` and write your query. 
+Go to the sense plugin in kibana and set the server to `http://localhost:9200/dnb`, then write your query. 
+
+    GET _search?search_type=count
+    {
+       "aggs" : {
+           "suhrkamp_pages" : {
+               "filter" : { "term": { "publisher.untouched": "Suhrkamp" } },
+               "aggs" : {
+                   "page_stats" : { "stats" : { "field" : "pages_norm" } }
+               }
+           }
+       }
+    }
+
+This will produce the following output:
+
+    {
+      "took": 110,
+      "timed_out": false,
+      "_shards": {
+        "total": 5,
+        "successful": 5,
+        "failed": 0
+      },
+      "hits": {
+        "total": 11373859,
+        "max_score": 0,
+        "hits": []
+      },
+      "aggregations": {
+        "suhrkamp_pages": {
+          "doc_count": 22325,
+          "page_stats": {
+            "count": 20209,
+            "min": 3,
+            "max": 3980,
+            "avg": 268.5873125835024,
+            "sum": 5427881
+          }
+        }
+      }
+    }
+
+
 
