@@ -40,3 +40,8 @@ This will call all sub scripts assembled in our "doItAll" file:
  * json2es.sh
 
 Now we're ready to go and carry out some queries.
+
+# Kibana
+
+Now head to the Kibana dashboard here `http://localhost:5601`. If you never worked with Kibana, check out their guide, for our purposes it's perfectly okay to start with the chapter *[Defining Your Index Patterns](https://www.elastic.co/guide/en/kibana/4.3/tutorial-define-index.html)*.
+
