@@ -94,5 +94,39 @@ This will produce the following output:
       }
     }
 
+Another query will answer our initial question:
+
+    GET _search?search_type=count
+    {
+       "aggs" : {
+          "page_stats" : { "stats" : { "field" : "pages_norm" } }
+       }
+    }
+
+Output:
+
+    {
+      "took": 228,
+      "timed_out": false,
+      "_shards": {
+        "total": 5,
+        "successful": 5,
+        "failed": 0
+      },
+      "hits": {
+        "total": 11373859,
+        "max_score": 0,
+        "hits": []
+      },
+      "aggregations": {
+        "page_stats": {
+          "count": 5874504,
+          "min": 0,
+          "max": 2711111,
+          "avg": 165.09413730929452,
+          "sum": 969846170
+        }
+      }
+    }
 
 
