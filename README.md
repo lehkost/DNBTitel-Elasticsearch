@@ -5,7 +5,7 @@ This Docker project will create a container running Elasticsearch/Kibana. It als
 
 ## Build the Docker Image
 
-Clone this repo to your hard drive and start Docker image by typing: 
+Clone this repo to your hard drive and build a Docker image by typing: 
 
     docker build -t dnb-titel .
 
@@ -20,9 +20,9 @@ This will do the steps defined in the Dockerfile: create a clean Debian containe
 
     docker run --rm -ti -p 9200:9200 -p 5601:5601 -v dnb2es:/home/elasticsearch/dnb2es -v esindex:/home/elasticsearch/elasticsearch dnb-titel:latest
 
-After this we have a working Docker container and can query Elasticesearch with Kibana/Sense via http://localhost:5601. However, our Elasticsearch index is still empty. It will be filled with DNB catalogue data during the next step:
+After this we have a working Docker container and can query Elasticsearch with Kibana/Sense via http://localhost:5601. However, our Elasticsearch index is still empty. It will be filled with DNB catalogue data during the next step:
 
-## Download Data From German National Library (DNB) Catalogue, Transform It to JSON and Fill Elasticsearch
+## Download Data from German National Library (DNB) Catalogue, Transform It to JSON and Fill Elasticsearch
 
 After typing …
 
@@ -43,15 +43,15 @@ Now we're ready to go and carry out some queries.
 
 # Using Kibana
 
-Now head to the Kibana dashboard here `http://localhost:5601`. If you never worked with Kibana, check out their guide, for our purposes it's perfectly okay to start with the chapter *[Defining Your Index Patterns](https://www.elastic.co/guide/en/kibana/4.3/tutorial-define-index.html)*.
+Now head to the Kibana dashboard: `http://localhost:5601`. If you never worked with Kibana, check out their guide, for our purposes it's perfectly okay to start with the chapter *[Defining Your Index Patterns](https://www.elastic.co/guide/en/kibana/4.3/tutorial-define-index.html)*.
 
-Go to "Settings", "Indices", enter "dnb" as name for the index pattern and don't forget to uncheck the box "Index contains time-based events". Then click on "Create".
+Next, in the Kibana dashboard, go to "Settings", "Indices", enter "dnb" as name for the index pattern and don't forget to uncheck the box "Index contains time-based events". Then click on "Create".
 
-Then, just to give you an example, you can click on "Visualize". Then "Vertical bar chart". Select "From a new search" (index "dnb"). Now you can graphically create your query. For example, to find the 5 authors with the most titles in the catalogue, do this: "X-Axis", Aggregation "Terms", choose the field "creator.untouched". Then press the green Play button. There you will see the 5 authors who have the most titles in the DNB. They appear as their GND numbers: Goethe, Rudolf Steiner, Thomas Mann, Hermann Hesse, Heinz G. Konsalik.
+Just to give you an example at this point, click on "Visualize". Then "Vertical bar chart". Select "From a new search" (index "dnb"). Now you can graphically create your query. For example, to find the 5 authors with the most titles in the catalogue, do this: "X-Axis", Aggregation "Terms", choose the field "creator.untouched". Then press the green Play button. There you will see the 5 authors who are attributed the most titles/books in the DNB catalogue. They appear as their GND numbers that easily be resolved: 1. Goethe, 2. Rudolf Steiner, 3. Thomas Mann, 4. Hermann Hesse, 5. Heinz G. Konsalik.
 
 # Using Sense
 
-Go to the sense plugin in kibana and set the server to `http://localhost:9200/dnb`, then write your query. 
+Go to the Sense plug-in in Kibana and set the server to `http://localhost:9200/dnb`, then write your query:
 
     GET _search?search_type=count
     {
