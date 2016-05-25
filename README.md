@@ -1,4 +1,7 @@
 # DNBTitel-Elasticsearch
+
+(Update · May 25, 2016 · We just published a blog post with background info and some first results: ["Empirical Data on Over-Length Books"](http://weltliteratur.net/Empirical-Data-on-Over-Length-Books/). – *FF*)
+
 This Docker project will create a container running Elasticsearch/Kibana. It also features shell scripts for downloading [the current version of the German National Library (DNB) title catalogue](http://datendienst.dnb.de/cgi-bin/mabit.pl?userID=opendata&pass=opendata&cmd=login). Some selected data fields from every book in that catalogue are then transformed into JSON and pushed to the Elasticsearch instance. After that you will be able to query the DNB catalogue data with Elasticsearch to create nice outputs with Kibana. The data fields we're focusing on are mainly the number of pages per book and some book metadata (author, title, year, publisher, etc.) for identification.
 
 # Docker
